@@ -49,7 +49,8 @@ const shapeColors = {
     },
   ]);
 
-  const selectedShapeInstance = new (eval(selectedShape))(shapeColor);
+  const selectedShapeInstance = new (eval(selectedShape))(shapeColor, text); // Pass text to the shape constructor
+  selectedShapeInstance.textColor = textColor; // Pass text color to the shape instance
   const svgContent = selectedShapeInstance.render();
 
   const fileName = 'logo.svg';
