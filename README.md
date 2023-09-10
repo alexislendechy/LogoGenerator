@@ -21,7 +21,7 @@ This project is powered by Node.js v.16, inquirer v.8.2.4 and file system module
 ```bash
 Please see recording below these steps are followed:
 ```
-[R E C O R D I N G]()
+[R E C O R D I N G](https://drive.google.com/file/d/1mm3kgElzFFtBEpttVVbO6Fzk2jO6K4Hc/view)
 
 **NOTE** Once the application finished, the logo will be created **BUT** keep in mind that it will only be visible as an image with the extension **Svg Preview** installed.
 
