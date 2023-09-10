@@ -18,24 +18,39 @@ const questions = [
     type: 'list',
     name: 'shape',
     message: 'Choose a shape for the logo:',
-    choices: ['Triangle', 'Circle', 'Square'],
-  },
-  {
-    type: 'input',
-    name: 'shapeColor',
-    message: 'Enter the shape color:',
+    choices: [
+      'Triangle - Choose a shape color',
+      'Circle - Choose a shape color',
+      'Square - Choose a shape color',
+    ],
   },
 ];
+
+const shapeColors = {
+  'Triangle - Choose a shape color': 'Enter the Triangle color:',
+  'Circle - Choose a shape color': 'Enter the Circle color:',
+  'Square - Choose a shape color': 'Enter the Square color:',
+};
 
 (async () => {
   console.log(chalk.bold('Logo Generator'));
 
   const answers = await inquirer.prompt(questions);
 
-  const { text, textColor, shape, shapeColor } = answers;
+  const { text, textColor, shape } = answers;
+  const selectedShape = shape.split(' - ')[0];
+  const shapeColorPrompt = shapeColors[shape];
 
-  const selectedShape = new (eval(shape))(shapeColor);
-  const svgContent = selectedShape.render();
+  const { shapeColor } = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'shapeColor',
+      message: shapeColorPrompt,
+    },
+  ]);
+
+  const selectedShapeInstance = new (eval(selectedShape))(shapeColor);
+  const svgContent = selectedShapeInstance.render();
 
   const fileName = 'logo.svg';
   fs.writeFileSync(fileName, svgContent);
