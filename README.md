@@ -14,7 +14,7 @@ This project is powered by Node.js v.16, inquirer v.8.2.4 and file system module
 
 1. Click on the file to open it in the terminal. 
 
-2. Run the command **npm i** to install the dependecies associated with this application (developers may need to install inquirer and jest directly from the command line to do so the command for inquirer will be "npm i inquirer@8.2.4 to install v.8.2.4 of the inquirer and npm i jest to install the latest version of jest).
+2. Run the command **npm i** to install the dependecies associated with this application (developers may need to install inquirer and jest directly from the command line to do so the command for inquirer will be "npm i inquirer@8.2.4" to install v.8.2.4 of the inquirer and npm i jest to install the latest version of jest).
 
 3. To run the application, within the terminal, type the command **node index.js**.
 
